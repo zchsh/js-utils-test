@@ -51,7 +51,7 @@ This way, we protect against layout-breaking headline overflows, while safely pr
 | automation     |
 ```
 
-Admittedly, the function as it is is rather complex, and could likely be cleaned up or rewritten in a clearer way. However, it does provide different functionality, so the complexity may be worth it as it likely means avoiding broken layouts.
+Admittedly, the function as it is is rather complex, and could likely be cleaned up or rewritten in a clearer way. However, it does provide additional functionality to address a known edge case, so the complexity may be worth it as it likely means avoiding broken layouts.
 
 ---
 
