@@ -1,6 +1,6 @@
 # Overview
 
-This repo is a quick reproduction of minor nit-picky issues with a small javascript utility used to mitigate windows<sup id="a1">[1](#f1)</sup>.
+This repo is a quick reproduction of nit-picky issues with a small javascript utility used to mitigate windows<sup id="a1">[1](#f1)</sup>.
 
 The difference between `mitigateWidows` and `eliminateOrphans` can be illustrated by running the tests contained in this repo:
 
