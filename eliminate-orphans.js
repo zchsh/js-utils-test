@@ -3,9 +3,9 @@
  * @param {string} string - The string to be de-orphaned
  * @param {string} [count = 12] - Total char count from end of string in which to replace spaces
  */
-function eliminateOrphans(string, count) {
+function eliminateOrphans(string, count = 12) {
   const charArray = string.split(""),
-    charArrayEnd = charArray.splice(-(count || 12)).map((char) => {
+    charArrayEnd = charArray.splice(-count).map((char) => {
       return char.match(/\s/) ? "&nbsp;" : char;
     });
 
