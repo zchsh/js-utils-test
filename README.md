@@ -41,7 +41,7 @@ This is similar to what a designer might do when typesetting. In the case of a h
 
 So, the `mitigateWidows` function works by making the "unbreakable" part at the end of the string as long as possible, _without exceeding_ the `unbreakLimit`. By default, the `unbreakLimit` is 12.
 
-This way, we protect against layout-breaking headline overflows, while safely prevent smaller word groups from being "alone at the end" of a headline or paragraph:
+This way, we protect against layout-breaking headline overflows, while safely preventing smaller words from being "alone at the end" of a headline or paragraph:
 
 ```
 | -- viewport -- |
