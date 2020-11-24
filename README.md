@@ -12,7 +12,7 @@ Further details below...
 
 ---
 
-The rationale for adopting the more complex `mitigateWidows` function is that it handles relatively common "edge case" where there are multiple long words at the end of a string of text (such as a headline or paragraph).
+The rationale for adopting the proposed `mitigateWidows` function is that it handles relatively common "edge case" where there are multiple long words at the end of a string of text (such as a headline or paragraph).
 
 ## Example
 
@@ -51,7 +51,7 @@ This way, we protect against layout-breaking headline overflows, while safely pr
 | automation     |
 ```
 
-Admittedly, the function as it is is rather complex, and could likely be cleaned up or rewritten in a clearer way. However, it does provide additional functionality to address a known edge case, so the complexity may be worth it as it likely means avoiding broken layouts.
+Admittedly, the `mitigateWidows` function as it is is rather complex compared to `eliminateOrphans`. However, it does provide additional functionality to address a known edge case, so the complexity may be worth it, as it likely means avoiding broken layout bugs. I've also tried to [rewrite the function](https://github.com/zchsh/widows-fns-test/blob/main/mitigate-widows.js) to make it easier to understand than the [initial implementation](https://github.com/hashicorp/web-components/blob/16e04333eb0e3a34908c2bbb536ad317993db097/packages/js-utils/index.js#L29).
 
 ---
 
