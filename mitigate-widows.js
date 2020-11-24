@@ -5,36 +5,26 @@
  * @returns {string} - String with unbreakable end part
  */
 function mitigateWidows(string, unbreakLimit = 12) {
-  const parts = string.split(" ");
-  //  Reversing the parts makes them easier to work with,
-  //  since we're starting from the end of the string
-  const reversedParts = parts.reduce((acc, part) => {
-    acc.unshift(part);
-    return acc;
-  }, []);
-  //  Set up arrays for the breakable parts (at the start of the string)
-  //  and the unbreakable parts (at the end of the string)
-  let breakableParts = [];
-  let unbreakableParts = [];
-  reversedParts.forEach((part) => {
-    //  nextLength is how long the unbreakableParts would be
-    //  if we were to add this part
-    const nextLength = [part].concat(unbreakableParts).join(" ").length;
-    //  the unbreakLimit has been exceeded if nextLength is too long,
-    //  or if breakableParts already has items (ie we exceeded the limit earlier)
-    const limitExceeded = nextLength > unbreakLimit || breakableParts.length;
-    //  We're already working through items in reverse order;
-    //  we use `unshift` to add to our "parts" arrays
-    //  so they're built up back in their original order
-    if (limitExceeded) {
-      breakableParts.unshift(part);
-    } else {
-      unbreakableParts.unshift(part);
-    }
-  });
-  //  Assemble the breakable and unbreakable parts into strings
-  const breakString = breakableParts.join(" ");
-  const unbreakString = unbreakableParts.join("&nbsp;");
+  const words = string.split(" ");
+  //  Set up an array for unbreakable words
+  const unbreakableWords = [];
+  //  Starting from the end of our words array,
+  //  add to unbreakableWords, but avoid exceeding our unbreakLimit
+  for (var i = words.length - 1; i >= 0; i--) {
+    //  nextLength is how long the unbreakable string would be if we add this word
+    const nextLength = [words[i]].concat(unbreakableWords).join(" ").length;
+    //  if we would exceed the unbreakLimit, the break out of the for loop
+    if (nextLength > unbreakLimit) break;
+    //  Otherwise, add this word to the unbreakable words array
+    //  using unshift() to restore the original word order
+    unbreakableWords.unshift(words[i]);
+  }
+  //  We now have some set of unbreakableWords from the end of the words array.
+  //  We need to concatenate the remaining words from the start of the words array.
+  const breakableWords = words.slice(0, words.length - unbreakableWords.length);
+  //  Assemble the breakable and unbreakable words into strings
+  const breakString = breakableWords.join(" ");
+  const unbreakString = unbreakableWords.join("&nbsp;");
   //  It's possible that either breakString and unbreakString are empty;
   //  we need to filter out empty strings before joining to avoid extra spaces
   return [breakString, unbreakString].filter((s) => s !== "").join(" ");
