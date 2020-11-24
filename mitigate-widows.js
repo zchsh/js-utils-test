@@ -13,7 +13,7 @@ function mitigateWidows(string, unbreakLimit = 12) {
   for (var i = words.length - 1; i >= 0; i--) {
     //  nextLength is how long the unbreakable string would be if we add this word
     const nextLength = [words[i]].concat(unbreakableWords).join(" ").length;
-    //  if we would exceed the unbreakLimit, the break out of the for loop
+    //  if we would exceed the unbreakLimit, then break out of the for loop
     if (nextLength > unbreakLimit) break;
     //  Otherwise, add this word to the unbreakable words array
     //  using unshift() to restore the original word order
