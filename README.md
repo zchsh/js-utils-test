@@ -51,7 +51,7 @@ This way, we protect against layout-breaking headline overflows, while safely pr
 | automation     |
 ```
 
-Admittedly, the `mitigateWidows` function as it is is rather complex compared to `eliminateOrphans`. However, it does provide additional functionality to address a known edge case, so the complexity may be worth it, as it likely means avoiding broken layout bugs. I've also tried to [rewrite the function](https://github.com/zchsh/widows-fns-test/blob/main/mitigate-widows.js) to make it easier to understand than the [initial implementation](https://github.com/hashicorp/web-components/blob/16e04333eb0e3a34908c2bbb536ad317993db097/packages/js-utils/index.js#L29).
+Admittedly, the `mitigateWidows` function is rather complex compared to `eliminateOrphans`. However, it does provide additional functionality to address a known edge case, so the complexity may be worth it, as it likely means avoiding broken layout bugs. I've also tried to [rewrite the function](https://github.com/zchsh/widows-fns-test/blob/main/mitigate-widows.js) to make it easier to understand than the [initial implementation](https://github.com/hashicorp/web-components/blob/16e04333eb0e3a34908c2bbb536ad317993db097/packages/js-utils/index.js#L29).
 
 ---
 
