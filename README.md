@@ -55,7 +55,7 @@ Admittedly, the `mitigateWidows` function as it is is rather complex compared to
 
 ---
 
-<sup id="f1">[1](#a1)</sup> Note: it seems the definitions of [widows and orphans](https://en.wikipedia.org/wiki/Widows_and_orphans) are, for some reason, relatively ill-defined and not really agreed upon, even within the design community. This is likely somewhat attributable to differences in whether people see layouts as sets of "strings" or sets of "lines of text".
+<sup id="f1">[1](#a1)</sup> **A note on naming this function**: it seems the definitions of [widows and orphans](https://en.wikipedia.org/wiki/Widows_and_orphans) are, for some reason, relatively ill-defined and not really agreed upon, even within the design community. This is likely somewhat attributable to differences in whether people see layouts as sets of "strings" or sets of "lines of text".
 
 Personally I think of layouts as sets of "strings" - each string renders a headline, a paragraph, a label, and so on. I find the mnemonic `An orphan is alone from the beginning; a widow is alone at the end` to be helpful. With these interpretations, a `widow` is a short word or word group that is `alone at the end` of a string<sup id="a2">[2](#f2)</sup>. The functions in question here replace spaces near the `end` of a string. So, it felt intuitive to use the term `window`.
 
