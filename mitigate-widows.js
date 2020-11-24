@@ -1,7 +1,7 @@
 /**
  * Mitigate widows at the end of a string, replacing spaces with &nbsp;
  * @param {string} string - The string to modify
- * @param {string} [unbreakLimit = 12] - Unbreakable end part won't exceed this length
+ * @param {number} [unbreakLimit = 12] - Unbreakable end part won't exceed this length
  * @returns {string} - String with unbreakable end part
  */
 function mitigateWidows(string, unbreakLimit = 12) {
